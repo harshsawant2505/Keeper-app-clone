@@ -2,16 +2,24 @@ import React from "react";
 import Header from "./header"
 import Footer from "./footer"
 import Note from "./note"
+import note from "../notes"
 
 
-function Headers(){
-    return <Header />
-}
-function Footers(){
-    return <Footer />
-}
-function Notes(){
-    return <Note />
+function App(){
+    return (
+            <div className="main">
+                <Header /> 
+                
+               
+               { note.map((data)=>{
+                    return <Note title = {data.title} content = {data.content} />
+                })}
+                  
+
+
+                <Footer />
+            </div>)
 }
 
-export {Headers,Footers,Notes}
+
+export default App
